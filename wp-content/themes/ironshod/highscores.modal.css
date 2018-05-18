@@ -1,0 +1,52 @@
+div#highscores_modal
+{
+	width: 480px;
+	height: 500px;
+	margin-top: -250px;
+	margin-left: -240px;
+	background: url('Images/modal/bg.png') top left no-repeat;
+}
+div#highscores_modal iframe
+{
+	overflow-x: hidden;
+	margin-top: 12px;
+	margin-left: 71px;
+}
+a.modal-close
+{
+	position: absolute;
+	top: 393px;
+	left: 112px;
+	text-indent: -9999px;
+	width: 252px;
+	height: 45px;
+	background: url('Images/modal/close_ss.png') 0 0 no-repeat;
+	overflow: hidden;
+}
+a.modal-close:hover { background-position: 0 -45px; }
+
+.modal-overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	opacity:.75;  
+	filter: alpha(opacity=75);  
+	-moz-opacity: 0.75;  
+	z-index:100;  
+}
+.modal-window
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	z-index: 101;
+	display: none;
+}

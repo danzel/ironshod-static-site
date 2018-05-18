@@ -1,0 +1,640 @@
+/*
+Theme Name: Ironshod
+Theme URI: http://www.ironshod.com/
+Description: Ironshod - an iPhone game development company
+Author: Jacob Toye
+Author URI: http://www.irsonshod.com
+Version: 1.0
+
+General comments/License Statement if any. 
+
+*/
+body {
+	background: #F6A01F url('Images/top.gif') top left repeat-x;
+	font-family: Trebuchet MS, Arial, Sans-Serif;
+	font-size: 14px;
+}
+.img_header
+{
+	text-indent: -9999px;
+}
+h3
+{
+	color: #3f2b0c;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 4px 0;
+}
+p
+{
+	margin-bottom: 10px;
+}
+object { position: absolute; z-index: 1; }
+div#main_wrapper 
+{
+	width: 960px;
+	margin: 6px auto 0 auto;
+	background: #F6A01F url('Images/gradient_bg.png') top left no-repeat;
+	min-height: 340px;
+}
+a, a:link, a:visited, a:active { outline: none; color: #FFF; }
+a:hover { text-decoration: underline; }
+/* Header */
+div#header
+{
+	width: 900px;
+	margin: 0 auto;
+}
+div#header h1
+{
+	background: transparent url('Images/ironshod_logo.png') top left no-repeat;
+	height: 100px;
+	width: 357px;
+	float: left;
+	margin: 30px 0 0 60px;
+	text-indent: -9999px;
+}
+div#header h1 a
+{
+	height: 100px;
+	display: block;
+}
+div#header ul
+{
+	float: right;
+	height: 42px;
+	margin: 60px 0 0;
+}
+div#header ul li
+{
+	float: left;
+	list-style: none none outside;
+	height: 42px;
+	line-height: 42px;
+	background: transparent url('Images/divider.png') top right no-repeat;
+	padding: 0 14px;
+}
+div#header ul li.last-child { background: none; }
+div#header ul li a
+{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+div#header ul li.current_page_item a, div#header ul li.current_page_parent a { color: #764D0F; }
+div#header ul li a:hover { color: #764D0F; }
+/* Hack to remove the final vertical bar - you must update the number if you change the last page */
+div#header ul li.page-item-25 { background: none; }
+
+/* Main Content */
+div#main_content
+{
+	width: 960px;
+	min-height: 355px;
+	position: relative;
+	padding-bottom: 14px;
+}
+div#main_content p
+{
+	color: #764D0F;
+	line-height: 20px;
+}
+div.blog
+{
+	margin: 40px auto 0;
+}
+div.index
+{
+	margin: 76px auto 0;
+	background: transparent url('Images/iphone.jpg') top left no-repeat;
+}
+div.games
+{
+	margin: 63px auto 0;
+	background: transparent url('Images/iphone_horizontal.jpg') 100% 56px no-repeat;
+}
+
+/* Blog content and sidebar styles */
+div#content, div#comments
+{
+	margin: 0 300px 0 0 !important;
+	padding: 0 30px 0 80px;
+}
+div#sidebar
+{
+	float: right;
+	background-position: 0 27px;
+	margin-left: 27px;
+}
+div#sidebar_inner
+{
+	background-position: 100% 27px;
+	float: left;
+}
+div#sidebar, div#sidebar_inner
+{
+	width: 273px;
+	background-image: url('Images/sidebar_border.png');
+	background-repeat: no-repeat;
+}
+
+
+/* Blog posts/content */
+div.post { width: 550px; margin-bottom: 20px; }
+div.post h1, div.post h1 a, div#comments h1
+{
+	font-weight: bold;
+	font-size: 1.4em;
+	color: #3f2b0c;
+}
+div.post h2, div.post h2 a, div#comments h2
+{
+	font-weight: bold;
+	font-size: 1.4em;
+	color: #3f2b0c;
+	padding-bottom: 6px;
+}
+div.post_inner
+{
+	width: 100%;
+	position: relative;
+	background: url('Images/post_hr.png') top left no-repeat;
+}
+div.post_info
+{
+	color: #3f2b0c;
+	font-style: italic;
+	position: relative;
+	width: 100%;
+	padding: 12px 0;
+}
+div.post_inner a { color: #FFF; font-style: normal; text-decoration: none; }
+div.post_inner a:hover { text-decoration: underline; }
+div.post_inner a.num_comments { position: absolute; right: 0; }
+div.post_inner a.comments { font-size: 0.8em; }
+
+div.post_img
+{
+	width: 67px;
+	height: 67px;
+	position: absolute;
+	top: -33px; left: -73px;
+}
+
+/* Sidebar elements */
+div#search
+{
+	width: 271px;
+	/*margin-left: 1px;*/
+	height: 53px;
+	/*background: url('Images/search_bg.png') top left no-repeat; */
+	border: 1px solid rgb(252,216,61);
+	border-bottom: none;
+}
+#search > * {
+	display: none;
+}
+div#search input[type=text]
+{
+	border: none;
+	background-color: #f7ad2f;
+	color: #764D0F;
+	font-style: italic;
+	font-family: Trebuchet MS, Arial, Sans-Serif;
+	font-size: 14px;
+	margin-left: 23px;
+	margin-top: 18px;
+	width: 180px;
+	float: left;
+}
+div#search input[type=image]
+{
+	float: right;
+	margin: 10px 16px 0 0;
+	width: 48px; height: 33px;
+}
+div#sidebar ul { list-style: none; width: 241px; margin: 0 auto; }
+div#sidebar ul li { margin-bottom: 10px; }
+div#sidebar ul li ul li { margin: 0; }
+div#sidebar ul li, #sidebar ul li ul li
+{
+	width: 241px;
+	float: left;
+	color: #FFF;
+}
+div#sidebar ul li h2 { color: #3F2B0C; font-size: 1.2em; margin-bottom: 5px; }
+div#sidebar ul li ul li a { color: #FFF; font-size: 0.8em; }
+div#sidebar ul li ul li a:hover { color: #764D0F; }
+
+table.categories { width: 240px; }
+table.categories tr td
+{
+	text-align: center;
+	width: 60px;
+}
+table.categories tr td a { color: #FFF; font-size: 0.8em; }
+table.categories tr td a:hover { color: #764D0F; }
+
+/*main page headers */
+h2#iphonegames
+{
+	height: 36px;
+	width: 250px;
+	background: transparent url('Images/h2_iphonegames.png') top left no-repeat;
+}
+h2#dst_title
+{
+	height: 36px;
+	width: 460px;
+	background: transparent url('Images/h2_dst.png') top left no-repeat;
+}
+h2#reverse_maze_title
+{
+	height: 36px;
+	width: 236px;
+	background: transparent url('Images/h2_reverse_maze.png') top left no-repeat;
+}
+
+/* The iphone screenshots */
+div.fade {
+	position: absolute;
+}
+div#fade_index {
+	top: 25px;
+	left: 131px;
+}
+div#fade_games {
+	top: 93px;
+	left: 519px;
+}
+div.fade div {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Buy now buttons */
+table#buynow { padding-bottom: 12px; }
+table#buynow { color: #FFF; }
+table#buynow a { font-size: 1.1em; color: #3F2B0C; text-decoration: none; }
+table#buynow a:hover { text-decoration: underline; }
+table#buynow a.sublink { font-size: 1em; color: #FFF; text-decoration: underline; }
+table#buynow a.sublink:hover { text-decoration: none; }
+
+/* The screenshot indicator */
+div#ss_indicator
+{
+	position: absolute;
+	white-space: nowrap;
+}
+div.index_ss_indicator { top: 246px; left: 272px; }
+div.games_ss_indicator { top: 327px; left: 643px; }
+
+/* left and right content divs */
+div.left_content { float: left; }
+div.right_content { float: right; }
+div#index_left_content, div#games_left_content { width: 510px; position: relative; }
+div#index_right_content, div#games_right_content { width: 430px; }
+div#games_left_content { height: 322px; background: transparent url('Images/youtube.jpg') 54px 0 no-repeat; padding: 7px 0 10px 0; }
+div#games_right_content { width: 430px; margin-top: 20px; }
+
+div#games_left_content object { margin-left: 61px; }
+
+/* iPhone next/prev buttons */
+div.iphone_btn { position: absolute; }
+div#iphone_btn_prev { top: 130px; left: 45px; }
+div#iphone_btn_prev_alt { left: 404px; top: 165px; }
+div#iphone_btn_next { top: 83px; left: 480px; }
+div#iphone_btn_next_alt { left: 908px; top: 165px; }
+div.iphone_btn a
+{
+	float: left;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+div.iphone_btn_index a
+{
+	height: 40px;
+	width: 26px;
+	background-image: url('Images/iphone_btn_ss.png');
+}
+div.iphone_btn_alt a
+{
+	height: 60px;
+	width: 37px;
+	background-image: url('Images/iphone_btn_ss_horizontal.png');
+}
+
+div.iphone_btn_index a.prev { background-position: 0 -40px; }
+div.iphone_btn_index a.prev:hover { background-position: -26px -40px; }
+div.iphone_btn_index a.next { background-position: 0 0; }
+div.iphone_btn_index a.next:hover { background-position: -26px 0; }
+
+div.iphone_btn_alt a.prev { background-position: 0 0; }
+div.iphone_btn_alt a.prev:hover { background-position: 0 -60px; }
+div.iphone_btn_alt a.next { background-position: -37px 0; }
+div.iphone_btn_alt a.next:hover { background-position: -37px -60px; }
+
+/* Comments styles */
+div#comments { background: url('Images/post_hr.png') no-repeat 80px 0; padding-top: 20px; }
+div#comments h2 { font-size: 1.2em; } /* rest of this style is in the Blog posts/content section */
+div#comments ul { list-style: none; width: 550px; }
+div#comments ul li
+{
+	width: 550px;
+}
+div#comments ul li div.comment_info, div#comments ul li div.comment_info_alt, div#comments ul li div.comment_info_admin
+{
+	width: 90px;
+	float: left;
+	padding: 10px;
+}
+div#comments ul li div.comment_data, div#comments ul li div.comment_data_alt, div#comments ul li div.comment_data_admin
+{
+	width: 420px;
+	float: right;
+	padding: 10px;
+	font-size: 0.8em;
+}
+div#comments ul li div.comment_data_alt { background-color: #f7ad2f; }
+div#comments ul li div.comment_data_admin { background-color: #B67617; }
+div#comments ul li div.comment_data_admin p { color: #FFF; }
+
+span.comment_author { color: #FFF; font-size: 0.9em; }
+a.comment_author { color: #FFF; font-weight: bold; font-size: 0.9em; }
+a.comment_author:hover { text-decoration: underline; }
+a.comment_date { color: #3F2B0C; font-style: italic; font-size: 0.8em; }
+a.comment_date:hover { color: #764D0F; text-decoration: none; }
+
+div#place_comment_form
+{
+	width: 550px;
+	margin-top: 10px;
+}
+div#place_comment_form fieldset
+{
+	padding: 0 10px;
+	border: none;
+}
+div#place_comment_form label
+{
+	color: #764D0F;
+}
+div#place_comment_form label.error { color: #f61f1f; }
+
+div#place_comment_form input[type=text], div#place_comment_form textarea
+{
+	background-color: #B67617;
+	border: #fcd93e 1px solid;
+	color: #FFF;
+	font-size: 0.9em;
+	padding: 4px 5px;
+	margin-bottom: 5px;
+	width: 230px;
+}
+div#place_comment_form textarea { width: 430px; margin-bottom: 0; }
+div#place_comment_form input[type=text].inputerror, div#place_comment_form textarea.inputerror { border-color: #ed1c24; }
+div#place_comment_form div#allowed_tags
+{
+	background-color: #fcd93e;
+	width: 435px;
+	color: #764D0F;
+	font-size: 0.8em;
+	border: #fcd93e 1px solid;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	font-style: italic;
+}
+div#place_comment_form p#comment_errormsg 
+{
+	color: #b91d14; 
+	font-size: 0.8em;
+	margin-left: 12px;
+	padding-left: 20px;
+	background: url('Images/icon_error.gif') 0 0 no-repeat;
+	line-height: 16px;
+}
+
+/* Misc */
+ul.points 
+{
+	list-style-position: inside;
+	list-style-type: circle;
+}
+ul.points li 
+{
+	color: #373836;
+	font-size: 12px;
+	line-height: 20px;
+}
+ul.points li span { color: #FEFEFE; }
+
+p.games_left { width: 380px; }
+
+/* Footer */
+div#footer_wrapper
+{
+	width: 100%;
+	border-top: 1px solid #fcd93e;
+	border-bottom: 1px solid #fcd93e;
+	background-color: #373836;
+}
+div#footer_content
+{
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+div#footer_content h4
+{
+	color: #FFF;
+	margin: 0 0 10px;
+	font-size: 1em;
+	font-weight: bold;
+}
+div#footer_content h5
+{
+	color: #f6a01f;
+	margin: 7px 0 0;
+}
+div#footer_content p
+{
+	color: #959595;
+	font-size: 0.8em;
+}
+div#footer_content h5 a { color: #f6a01f; text-decoration: none; font-weight: bold; }
+div#footer_content h5 a:hover { color: #FFF; }
+div#footer_content hr
+{
+	border: 0;
+	width: 300px;
+	height: 1px;
+	color: #686038;
+	background-color: #686038;
+}
+div#footer_content ul#post_excerpts { list-style: none; color: #959595; font-size: 0.8em }
+div#footer_content ul#post_excerpts h5 { font-size: 1.1em; }
+div#footer_content hr.main { color: #9a893a; background-color: #9a893a; }
+div#footer_content p a
+{
+	color: #f6a01f;
+	border-bottom: 1px dashed #f6a01f;
+	text-decoration: none;
+}
+div#footer_content p a:hover
+{
+	color: #FFF;
+	border-bottom: 1px solid #959595;
+}
+div#footer_content div.footer_block, div#about
+{
+	width: 300px;
+	float: left;
+}
+div#footer_content div.footer_block { margin-left: 30px; }
+div#footer_content a.btn
+{
+	float: left;
+	text-indent: -9999px;
+	height: 19px;
+	background-image: url('Images/footer_btn_ss.jpg');
+	background-repeat: no-repeat;
+	overflow: hidden;
+	margin-top: 5px;
+}
+div#footer_content a.btn_contact
+{
+	width: 104px;
+	background-position: 0 0;
+}
+div#footer_content a.btn_contact:hover
+{
+	background-position: 0 -19px;
+}
+div#footer_content a.btn_blog
+{
+	width: 85px;
+	background-position: -104px 0;
+}
+div#footer_content a.btn_blog:hover
+{
+	background-position: -104px -19px;
+}
+/* Copyright Footer */
+div#copyright
+{
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px 0;
+	color: #764D0F;
+	font-size: 0.8em;
+	text-align: center;
+}
+span.quote { color: #FFF; font-weight: bold; }
+
+/* Simpulls */
+.simpulls {
+	margin-top: 60px;
+}
+
+#simpulls-header {
+	background: transparent url('Images/h2_simpulls.png') top left no-repeat;
+	margin: 0 auto 28px;
+	width: 324px;
+	height: 94px;
+}
+
+.simpulls-bg {
+	background: transparent url('Images/simpulls_bg.jpg') center top no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 340px;
+	z-index: -1;
+}
+
+.signup-box {
+	background-color: #edd294;
+	border: 10px solid #926620;
+	border-radius: 20px;
+	margin: 30px auto 10px;
+	width: 540px; height: 100px;
+}
+
+.signup-button-container {
+	background-color: #dac083;
+	border: 10px solid #926620;
+	border-radius: 20px;
+	float: right;
+	margin-top: -20px;
+	margin-right: 20px;
+	width: 120px;
+	height: 120px;
+}
+
+a.signup-button {
+	background: transparent url('Images/sign_up_button.png') top left no-repeat;
+	display: block;
+	width: 120px;
+	height: 120px;
+}
+
+a.signup-button:active {
+	background-position: -120px 0;
+}
+
+.signup-entry {
+	background-color: #7b5c2b; 
+	border: 1px solid #926620;
+	border-bottom-color: #fff;
+	border-left-color: #BF9C5A;
+	border-right-color: #BF9C5A;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 21px;
+	text-indent: 6px;					
+	width: 336px;
+	height: 34px;
+}
+
+.signup-entry::-webkit-input-placeholder {
+	color: #b6914e;
+   font-style: italic;
+   font-weight: normal;
+}
+
+.signup-entry:-moz-placeholder {
+	color: #b6914e;
+   font-style: italic;
+   font-weight: normal;
+}
+
+.signup-box h3 {
+	background: transparent url('Images/h2_mailing_list.png') top left no-repeat;
+	margin: 8px 0 8px 22px;
+	width: 254px;
+	height: 38px;
+}
+
+.signup-error,
+.signup-success {
+	display: none;
+	font-weight: bold;
+	margin-left: 220px;
+	margin-top: 26px;
+}
+
+.signup-error {
+	color: #dd3f15 !important;
+}
+
+.signup-success {
+	color: #4F8D29 !important;
+}
+
+.singup-entry.email-error {
+	background-color: #da5937;
+}

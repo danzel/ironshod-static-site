@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Ironshod &#187; Other</title>
+	<atom:link href="http://ironshod.co.nz/category/other/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ironshod.co.nz</link>
+	<description>iPhone games made right!</description>
+	<lastBuildDate>Wed, 02 Dec 2015 20:13:12 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.4</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>My Pet Peeve: Bad menus</title>
+		<link>http://ironshod.co.nz/2009/10/16/my-pet-peeve-bad-menus/</link>
+		<comments>http://ironshod.co.nz/2009/10/16/my-pet-peeve-bad-menus/#comments</comments>
+		<pubDate>Fri, 16 Oct 2009 04:55:01 +0000</pubDate>
+		<dc:creator>ironshod-dave</dc:creator>
+				<category><![CDATA[Other]]></category>
+
+		<guid isPermaLink="false">http://ironshod.co.nz/?p=78</guid>
+		<description><![CDATA[<img src="/wp-content/themes/ironshod/Images/category-icons/none_icon.jpg" width="59" height="60" alt="Other" title="Other" /><br/>I'm sick and tired of games on the iPhone having slow, unresponsive menus with minimal feedback!]]></description>
+			<content:encoded><![CDATA[<img src="/wp-content/themes/ironshod/Images/category-icons/none_icon.jpg" width="59" height="60" alt="Other" title="Other" /><br/><p>Everyone has their own pet peeves, today I&#8217;m introducing one of mine.</p>
+<p><span style="text-decoration: underline;">I&#8217;m sick and tired of games on the iPhone having slow, unresponsive menus with minimal feedback!</span></p>
+<h1><strong>The Problem</strong></h1>
+<p>When a user presses a button, they need feedback to know that their input was successful and is being acted on.</p>
+<p>If the device doesn&#8217;t immediately provide feedback that their input was successful, they will assume that it wasn&#8217;t and try again.</p>
+<p>This frustrates the user, leaving them thinking your game is poor quality before they have even played it!</p>
+<h1><strong>What causes it</strong></h1>
+<p>Usually this is caused by loading something immediately after a menu button is pressed. This makes sense of course, you don&#8217;t want to load too many things or you will run out of memory, so you wait until you need it to load it.</p>
+<p>Unfortunately loading it at the last moment will leave the user waiting for the resources to load when they should be rendering.</p>
+<p>Greatly simplified pseudo-code:</p>
+<pre>OnTouchFinish:
+{
+	if (TouchIsOnPlayButton)
+	{
+		LoadPlayScreen();
+		ShowPlayScreen();
+	]
+}</pre>
+<h1><strong>How to fix it<br />
+</strong></h1>
+<p>There are many different ways to negate the intrusion caused here, I&#8217;ll details a few, but this is certainly not the definitive list!</p>
+<h3>Load Less</h3>
+<p>Perhaps an obvious one, but if you can get by without loading another big background image then you won&#8217;t even have this problem!</p>
+<p>The game <a href="http://www.saucelifter.com/" target="_blank">SauceLifter</a> negates the loading problem in this way. They don&#8217;t have any image data to load, everything is just vector data which takes up much less disk and memory space leading to MUCH quicker load times.</p>
+<p>Maybe you have the same background on each of your menu screens with a different header.<br />
+Rather than having a screen sized image for each of them you could store the background separately from the headers. Then you only have the time hit from loading the large image once and a few small hits when loading the headers.</p>
+<h3>Trick the user</h3>
+<p>As buildings got taller people complained that it took too long for the elevator to travel to their destination floor. The engineers couldn&#8217;t make the elevators faster, as they can only go so fast before they start throwing passengers around. So instead the engineers put mirrors inside the elevator to distract the passengers (checking their hair, make-up etc).</p>
+<p>Obviously you can&#8217;t add a mirror to distract the user, but you can add in your own distractions: Animated loading screens, trivia laden loading screens, fade to black &#8211; load &#8211; fade to new screen.</p>
+<p>This won&#8217;t improve your load time, in fact it can slow it down marginally! But if implemented correctly your user will be tricked into thinking it&#8217;s faster, which is the desired result.</p>
+<h3>Bigger Initial Load</h3>
+<p>Users are used to games having an initial loading screen, so why not make use of it!</p>
+<p>Rather than loading everything as you go, breaking the users flow. Load as much as you can initially, within reason. You don&#8217;t want the user to quit before they have even seen the initial menu and there isn&#8217;t much point loading the end boss graphics if it won&#8217;t be needed any time soon.</p>
+<p>Personally I don&#8217;t think this fits well on the iPhone as I see the iPhone as a pick-up and play device, I want to spend the majority of my time playing games and the minimum of my time waiting for it to load.</p>
+<p>Bejewelled 2 uses this. Once the initial load is done the game is lightning fast. Unfortunately their initial load is LONG, too long!</p>
+<h3>Load when idle</h3>
+<p>One way that works particularly well with menu screens is to load when the system is idle.</p>
+<p>When the user is presented with a menu screen, they will stop interacting momentarily to read it. You can use this time to load the next menu. If the user immediately taps a button then this will be no worse than lazy loading, but if the user takes a moment when the menu is presented then the illusion that there is no loading will hold.</p>
+<h3>Compressed Data</h3>
+<p>The iPhone supports PVRTC image files, an efficient texture compression format.</p>
+<p>When loading a PVRTC texture theÂ texture is pulled straight from disk and can immediately be loaded into OpenGL, in comparison a PNG image must be loaded into memory and then decoded before it can be used (CoreGraphics takes care of this for you). The overhead of decoding the PNG image can get big enough that it makes a noticable difference.</p>
+<p>In our upcoming game had a 1024&#215;1024 texture that was being lazy-loaded (Loaded after a menu button was pressed). When the image was a PNG there was a very noticeable 2 second delay between pressing the button and having the next screen display. After converting to PVRTC the load became so quick I haven&#8217;t yet got around to changing it from using lazy loading!</p>
+<p>PVRTC textures also use less memory than uncompressed textures (of course), there can be some small quality loss using compressed textures, so you should play around a bit to get a good balance.</p>
+<p>There is a sample showing how to use PVRTC on the iPhone Development site: <a href="http://developer.apple.com/iphone/library/samplecode/PVRTextureLoader/index.html" target="_blank">http://developer.apple.com/iphone/library/samplecode/PVRTextureLoader/index.html</a></p>
+<p>Hopefully some of these will help everyone to improve the usability of their menus so this bugs me no more!Â If anyone has any questions please ask in the comments <img src='http://ironshod.co.nz/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>We should have some news to announce on our upcoming game in the next few weeks.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ironshod.co.nz/2009/10/16/my-pet-peeve-bad-menus/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Customers</title>
+		<link>http://ironshod.co.nz/2009/07/27/customers/</link>
+		<comments>http://ironshod.co.nz/2009/07/27/customers/#comments</comments>
+		<pubDate>Mon, 27 Jul 2009 00:13:14 +0000</pubDate>
+		<dc:creator>ironshod-dave</dc:creator>
+				<category><![CDATA[Other]]></category>
+
+		<guid isPermaLink="false">http://ironshod.co.nz/?p=69</guid>
+		<description><![CDATA[<img src="/wp-content/themes/ironshod/Images/category-icons/none_icon.jpg" width="59" height="60" alt="Other" title="Other" /><br/>&#60;mongo_bonz&#62; Hi I got your iPod game last night lol
+&#60;mongo_bonz&#62; Now as a custmer can I ask for a rpg like ff7 lol aaarrrrrrrrr]]></description>
+			<content:encoded><![CDATA[<img src="/wp-content/themes/ironshod/Images/category-icons/none_icon.jpg" width="59" height="60" alt="Other" title="Other" /><br/><pre>&lt;mongo_bonz&gt; Hi I got your iPod game last night lol
+&lt;mongo_bonz&gt; Now as a custmer can I ask for a rpg like ff7 lol aaarrrrrrrrr</pre>
+<p>no. lol. <img src='http://ironshod.co.nz/wp-includes/images/smilies/icon_razz.gif' alt=':-P' class='wp-smiley' />  Anyone else out there know of one on the app store?</p>
+<p>We have 2 games in the pipeline at the moment, neither is an RPG.</p>
+<p>Jacob is hard at work drawing, redrawing and re-redrawing the graphics for our second game, he is such a hard man to (self) please! I&#8217;ve been working on the coding, the engine for it is 90% complete. It is totally playable and the people we have had testing it have had plenty of positive comments.</p>
+<p>Our 3rd game is just a prototype at the moment, the super sexy programmer graphics I&#8217;ve created show off the ideas behind it, and the very select few we&#8217;ve shown it to are eagerly awaiting more <img src='http://ironshod.co.nz/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>I&#8217;m gonna go kick Jacobs arse and get him to write an article about how difficult it is to create menu screens that are sexy <img src='http://ironshod.co.nz/wp-includes/images/smilies/icon_razz.gif' alt=':-P' class='wp-smiley' />  Or maybe just get him to finish the menus and then we could start to post some news about the game <img src='http://ironshod.co.nz/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://ironshod.co.nz/2009/07/27/customers/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
